@@ -14,26 +14,29 @@ Java, Maven, DropWizard and MySql
 Base Url- `http://localhost:8080/message`
 
 1. Http Method : `/GET` receives all messages in queue - 
-   `[
+
+  [
   {
     "id": "0e65a8e7-7573-44c3-9566-b8ac1722a0e0",
     "description": "First Message",
-    "timestamp": 1476570143000,
-    "timeStamp": 1476570143000
+    "timeStamp": 1476600016000
   },
   {
-    "id": "3c2af5ea-8207-4388-8932-4f00b43086d4",
-    "description": "First Message",
-    "timestamp": 1476568374000,
-    "timeStamp": 1476568374000
-  }
-  ]`
+    "id": "5131b394-6719-4a65-9fa4-8df7c94c0303",
+    "description": "testing Message",
+    "timeStamp": 1476600255000
+  }]
   
 2. HTTP Method : `/POST` allows creation of new message in the queue
      
      Request Body : `{ "description" : "First Message" }`
      
 3. HTTP Method : `/DELETE/{id}` - allows for acknowledgement of message by a consumer - necessary unless messages are having a configurable timeout which keeps track of all messages duration received by a consumer.
+
+Response :
+{
+  "status": "Success"
+}
 
 # Data Storage Abstraction : 
    Data storage is abstracted, as before running application dataSource can be changed to different data storage.
